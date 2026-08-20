@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         glue = "com.celleree.framework.steps",
         plugin = {
                 "pretty",
-                "html:target/cucumber-report.html"
+                "html:reports/cucumber-report.html"
         })
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
