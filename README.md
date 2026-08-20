@@ -9,7 +9,7 @@ A small Java 21 BDD test automation framework built with Maven, Cucumber-JVM, Se
 - Git
 - Google Chrome
 
-## Build
+## Run the test suite
 
 From the repository root, run:
 
@@ -17,4 +17,18 @@ From the repository root, run:
 mvn test
 ```
 
-Phase 2 establishes the Maven project skeleton and dependency setup. Test scenarios and framework implementation are added in later phases.
+The suite includes:
+
+- SauceDemo successful login UI scenario
+- SauceDemo invalid login UI scenario
+- JSONPlaceholder API scenario
+
+## HTML report
+
+After a successful test run, Cucumber generates an HTML report at:
+
+```text
+reports/cucumber-report.html
+```
+
+Open that file in a browser to review the scenario and step results. The `reports` directory is kept in the repository so a report from a verified real run can be committed as the assignment artifact.
