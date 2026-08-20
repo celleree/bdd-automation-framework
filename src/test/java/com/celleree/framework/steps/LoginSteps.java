@@ -27,6 +27,13 @@ public class LoginSteps {
                 ConfigReader.get("ui.valid.password"));
     }
 
+    @When("I log in with invalid credentials")
+    public void iLogInWithInvalidCredentials() {
+        loginPage.login(
+                ConfigReader.get("ui.invalid.username"),
+                ConfigReader.get("ui.invalid.password"));
+    }
+
     @Then("I should see the Products page")
     public void iShouldSeeTheProductsPage() {
         String actualTitle = loginPage.getProductsTitle();
@@ -36,5 +43,16 @@ public class LoginSteps {
                 actualTitle,
                 expectedTitle,
                 "Expected Products page title to be '" + expectedTitle + "' but found '" + actualTitle + "'.");
+    }
+
+    @Then("I should see the expected login error")
+    public void iShouldSeeTheExpectedLoginError() {
+        String actualError = loginPage.getLoginErrorMessage();
+        String expectedError = "Epic sadface: Username and password do not match any user in this service";
+
+        Assert.assertEquals(
+                actualError,
+                expectedError,
+                "Expected login error to be '" + expectedError + "' but found '" + actualError + "'.");
     }
 }
