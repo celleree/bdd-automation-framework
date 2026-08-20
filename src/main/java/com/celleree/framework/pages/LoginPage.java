@@ -19,6 +19,7 @@ public class LoginPage {
     private final By passwordInput = By.id("password");
     private final By loginButton = By.id("login-button");
     private final By productsTitle = By.cssSelector("[data-test='title']");
+    private final By loginErrorMessage = By.cssSelector("[data-test='error']");
 
     public LoginPage() {
         this.driver = BrowserManager.getDriver();
@@ -38,5 +39,9 @@ public class LoginPage {
 
     public String getProductsTitle() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(productsTitle)).getText();
+    }
+
+    public String getLoginErrorMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(loginErrorMessage)).getText();
     }
 }
