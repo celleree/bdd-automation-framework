@@ -18,7 +18,7 @@ public class LoginPage {
     private final By usernameInput = By.id("user-name");
     private final By passwordInput = By.id("password");
     private final By loginButton = By.id("login-button");
-    private final By productsTitle = By.className("title");
+    private final By productsTitle = By.cssSelector("[data-test='title']");
 
     public LoginPage() {
         this.driver = BrowserManager.getDriver();
